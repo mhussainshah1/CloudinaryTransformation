@@ -62,9 +62,7 @@ public class HomeController {
         if (f.isEmpty()) {
             return "redirect:/addactor";
         }
-
         try {
-
             Map uploadResult = cloudc.upload(f.getBytes(), ObjectUtils.asMap("resourcetype", "auto"));
             String uploadURL = uploadResult.get("url").toString();
             String uploadedName = uploadResult.get("public_id").toString();
@@ -74,7 +72,6 @@ public class HomeController {
             System.out.println("Name:" + uploadedName);
             actor.setHeadshot(transformedImage);
             actorRepository.save(actor);
-
         } catch (IOException e) {
             e.printStackTrace();
             return "redirect:/addactor";
