@@ -1,4 +1,4 @@
-package me.afua.demo.models;
+package com.example.demo.models;
 
 
 import javax.persistence.*;

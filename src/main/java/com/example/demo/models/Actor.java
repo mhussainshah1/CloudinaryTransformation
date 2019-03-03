@@ -1,4 +1,4 @@
-package me.afua.demo.models;
+package com.example.demo.models;
 
 
 import javax.persistence.*;
@@ -14,7 +14,6 @@ public class Actor {
     private String name;
     private String realname;
     private String headshot;
-
 
     @ManyToMany(mappedBy="cast")
     private Set<Movie> movies;

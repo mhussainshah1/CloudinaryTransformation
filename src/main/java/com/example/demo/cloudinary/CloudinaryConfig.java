@@ -1,4 +1,4 @@
-package me.afua.demo.cloudinary;
+package com.example.demo.cloudinary;
 
 import com.cloudinary.Cloudinary;
 import com.cloudinary.Singleton;

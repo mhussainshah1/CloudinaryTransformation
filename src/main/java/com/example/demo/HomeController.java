@@ -1,11 +1,11 @@
-package me.afua.demo;
+package com.example.demo;
 
 import com.cloudinary.utils.ObjectUtils;
-import me.afua.demo.cloudinary.CloudinaryConfig;
-import me.afua.demo.models.Actor;
-import me.afua.demo.models.Movie;
-import me.afua.demo.repositories.ActorRepository;
-import me.afua.demo.repositories.MovieRepository;
+import com.example.demo.cloudinary.CloudinaryConfig;
+import com.example.demo.models.Actor;
+import com.example.demo.models.Movie;
+import com.example.demo.repositories.ActorRepository;
+import com.example.demo.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.Map;
 
 @Controller
-public class MainController {
+public class HomeController {
     @Autowired
     ActorRepository actorRepository;
 
@@ -33,7 +33,7 @@ public class MainController {
         model.addAttribute("gotactors", actorRepository.count());
         model.addAttribute("actorList", actorRepository.findAll());
         model.addAttribute("movieList", movieRepository.findAll());
-        model.addAttribute("title","Movie Database");
+        model.addAttribute("title", "Movie Database");
         return "index";
     }
 
@@ -127,5 +127,8 @@ public class MainController {
         return "redirect:/";
     }
 
-
+    @RequestMapping("/about")
+    public String getAbout() {
+        return "about";
+    }
 }
